@@ -5,7 +5,9 @@ from transformers import BertForSequenceClassification, AutoTokenizer
 import torch
 import nltk
 from nltk.tokenize import sent_tokenize
-nltk.download('punkt')
+@st.cache_resource
+def get_nltk():
+    nltk.download('punkt')
 
 st.set_page_config(
     page_title="Sentimento - Home",
@@ -30,6 +32,7 @@ caminho_dbfs = st.secrets['MODELO']
 
 model = load_model(caminho_dbfs)
 tokenizer = load_token(caminho_dbfs)
+get_nltk()
 
 def analise_func(texto:str):
 
