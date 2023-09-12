@@ -50,14 +50,6 @@ def analise_func(texto:str):
     # print(f"Sentimento Predito: {sentimento_predito}")
     return sentimento_predito
 
-def analise_sentimento_texto(texto):
-    texto = texto.replace(',','.')
-
-    frases = sent_tokenize(texto, language="portuguese")  # Divide o texto em frases
-    sentimentos_frases = [analise_func(frase) for frase in frases]
-    print(frases)
-    return sentimentos_frases
-
 # FRONT
 st.title('Home')
 st.header('Sentimento')
@@ -69,9 +61,4 @@ if prompt:
     resultado1 = analise_func(prompt)
     st.write(f"O sentimento encontrado na frase foi: {resultado1}")
 
-st.divider()
-# Prompt 2
-prompt2 = st.chat_input("Say something",key='prompt2')
-if prompt2:
-    resultado2 = analise_sentimento_texto(prompt2)
-    st.write(f"O sentimento encontrado na frase foi: {resultado2}")
+
