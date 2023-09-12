@@ -24,8 +24,8 @@ def load_token(path):
 caminho_dbfs = st.secrets['MODELO']
 # Carregue o modelo pré-treinado e o tokenizador
 
-model = load_model(st.secrets['MODELO'])
-tokenizer = load_token(st.secrets['MODELO'])
+model = load_model(caminho_dbfs)
+tokenizer = load_token(caminho_dbfs)
 
 def analise_func(texto:str):
 
