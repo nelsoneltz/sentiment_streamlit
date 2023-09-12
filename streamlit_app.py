@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 from transformers import BertForSequenceClassification, AutoTokenizer
 import torch
+import nltk
+from nltk.tokenize import sent_tokenize
+nltk.download('punkt')
 st.set_page_config(
     page_title="Sentimento - Home",
     page_icon="🙂",
@@ -46,19 +49,26 @@ def analise_func(texto:str):
     # print(f"Sentimento Predito: {sentimento_predito}")
     return sentimento_predito
 
+def analise_sentimento_texto(texto):
+    texto = texto.replace(',','.')
+
+    frases = sent_tokenize(texto, language="portuguese")  # Divide o texto em frases
+    sentimentos_frases = [analise_func(frase) for frase in frases]
+    print(frases)
+    return sentimentos_frases
+
 # FRONT
 st.title('Home')
 st.header('Sentimento')
 st.divider()
 
-
-
-
-
-
-
+# Prompt 1
 prompt = st.chat_input("Say something")
 if prompt:
     resultado = analise_func(prompt)
     st.write(f"O sentimento encontrado na frase foi: {resultado}")
+
+prompt2 = st.chat_input("Say something")
+if prompt2:
+    resultado = analise_sentimento_texto(prompt2)
     st.write(f"O sentimento encontrado na frase foi: {resultado}")

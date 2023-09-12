@@ -26,7 +26,7 @@ def get_links(numero:int):
 
 
 lista_original =[]
-for i in range(1,10):
+for i in range(1,51):
     
     lista_original = lista_original + get_links(i)
     tempo_dormido = random.randint(2,10)
