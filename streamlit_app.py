@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from transformers import BertForSequenceClassification, AutoTokenizer
 import torch
-caminho_dbfs = MODELO
+caminho_dbfs = st.secrets['MODELO']
 # Carregue o modelo pré-treinado e o tokenizador
 model = BertForSequenceClassification.from_pretrained(caminho_dbfs)
 tokenizer = AutoTokenizer.from_pretrained(caminho_dbfs)
