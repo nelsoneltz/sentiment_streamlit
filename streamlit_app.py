@@ -14,15 +14,15 @@ st.set_page_config(
         'About': "# This is a header. This is an *extremely* cool app!"
     }
 )
+@st.cache_resource
+def load_model(path):
+	  return BertForSequenceClassification.from_pretrained(path)
+@st.cache_resource
+def load_token(path):
+      return AutoTokenizer.from_pretrained(path)
 
 caminho_dbfs = st.secrets['MODELO']
 # Carregue o modelo pré-treinado e o tokenizador
-@st.cache
-def load_model(path):
-	  return BertForSequenceClassification.from_pretrained(path)
-@st.cache
-def load_token(path):
-      return AutoTokenizer.from_pretrained(path)
 
 model = load_model(st.secrets['MODELO'])
 tokenizer = load_token(st.secrets['MODELO'])
