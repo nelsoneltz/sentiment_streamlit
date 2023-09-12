@@ -18,14 +18,14 @@ st.set_page_config(
 caminho_dbfs = st.secrets['MODELO']
 # Carregue o modelo pré-treinado e o tokenizador
 @st.cache
-def load_model():
-	  return BertForSequenceClassification.from_pretrained(caminho_dbfs)
+def load_model(path):
+	  return BertForSequenceClassification.from_pretrained(path)
 @st.cache
-def load_token():
-      return AutoTokenizer.from_pretrained(caminho_dbfs)
+def load_token(path):
+      return AutoTokenizer.from_pretrained(path)
 
-model = load_model()
-tokenizer = load_token()
+model = load_model(st.secrets['MODELO'])
+tokenizer = load_token(st.secrets['MODELO'])
 
 def analise_func(texto:str):
 
@@ -60,6 +60,5 @@ st.divider()
 prompt = st.chat_input("Say something")
 if prompt:
     resultado = analise_func(prompt)
-    st.write(f"O sentimento encontrado na frase foi: {resultado}")
     st.write(f"O sentimento encontrado na frase foi: {resultado}")
     st.write(f"O sentimento encontrado na frase foi: {resultado}")
