@@ -3,10 +3,29 @@ import numpy as np
 import pandas as pd
 from transformers import BertForSequenceClassification, AutoTokenizer
 import torch
+st.set_page_config(
+    page_title="Sentimento - Home",
+    page_icon="🙂",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+)
+
 caminho_dbfs = st.secrets['MODELO']
 # Carregue o modelo pré-treinado e o tokenizador
-model = BertForSequenceClassification.from_pretrained(caminho_dbfs)
-tokenizer = AutoTokenizer.from_pretrained(caminho_dbfs)
+@st.cache
+def load_model():
+	  return BertForSequenceClassification.from_pretrained(caminho_dbfs)
+@st.cache
+def load_token():
+      return AutoTokenizer.from_pretrained(caminho_dbfs)
+
+model = load_model()
+tokenizer = load_token()
 
 def analise_func(texto:str):
 
