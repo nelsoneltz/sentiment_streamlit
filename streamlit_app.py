@@ -63,12 +63,13 @@ st.header('Sentimento')
 st.divider()
 
 # Prompt 1
-prompt = st.chat_input("Say something")
+prompt = st.chat_input("Say something",key='prompt1')
 if prompt:
     resultado = analise_func(prompt)
     st.write(f"O sentimento encontrado na frase foi: {resultado}")
 
-prompt2 = st.chat_input("Say something")
+# Prompt 2
+prompt2 = st.chat_input("Say something",key='prompt2')
 if prompt2:
     resultado = analise_sentimento_texto(prompt2)
     st.write(f"O sentimento encontrado na frase foi: {resultado}")
