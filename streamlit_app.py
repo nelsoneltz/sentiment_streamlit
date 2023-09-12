@@ -6,6 +6,7 @@ import torch
 import nltk
 from nltk.tokenize import sent_tokenize
 nltk.download('punkt')
+
 st.set_page_config(
     page_title="Sentimento - Home",
     page_icon="🙂",
@@ -65,11 +66,12 @@ st.divider()
 # Prompt 1
 prompt = st.chat_input("Say something",key='prompt1')
 if prompt:
-    resultado = analise_func(prompt)
-    st.write(f"O sentimento encontrado na frase foi: {resultado}")
+    resultado1 = analise_func(prompt)
+    st.write(f"O sentimento encontrado na frase foi: {resultado1}")
+
 st.divider()
 # Prompt 2
 prompt2 = st.chat_input("Say something",key='prompt2')
 if prompt2:
-    resultado = analise_sentimento_texto(prompt2)
-    st.write(f"O sentimento encontrado na frase foi: {resultado}")
+    resultado2 = analise_sentimento_texto(prompt2)
+    st.write(f"O sentimento encontrado na frase foi: {resultado2}")
