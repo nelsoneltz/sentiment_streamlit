@@ -67,7 +67,7 @@ prompt = st.chat_input("Say something",key='prompt1')
 if prompt:
     resultado = analise_func(prompt)
     st.write(f"O sentimento encontrado na frase foi: {resultado}")
-
+st.divider()
 # Prompt 2
 prompt2 = st.chat_input("Say something",key='prompt2')
 if prompt2:
