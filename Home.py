@@ -5,12 +5,12 @@ from PIL import Image
 import funcs
 
 st.set_page_config(
-    page_title="Avaliador",
+    page_title="Orange Box",
     page_icon="🚧",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'About': "# Este é um web app criado por Nelson Eltz e Abner Sampaio."
+        'About': "# Este é um web app criado por Abner Sampaio,Luiz Felipe Moriondo, Nelson Eltz e Wanderson Freitas"
     }
 )
 
@@ -30,6 +30,8 @@ with left:
     st.write("#### Por enquanto estamos realizando análises on premise. Mas no futuro a ideia é obter o feedback do Avaliador em tempo real, para uma tomada de decisão mais efetiva sobre o atendimento ao cliente.")
     st.divider()
     st.write("#### Nosso modelo de machine learning foi criado utilizando milhares de mensagens trocadas entre clientes e empresas, bem como suas avaliações sobre o atendimento.")
+    st.divider()
+    st.write('<div/ id="teste1">Esse é umt este de DIV. ')
 with right:
     st.image("gif2.gif",use_column_width=True)
    

@@ -11,7 +11,7 @@ def get_nltk():
 
 st.set_page_config(
     page_title="Single Text Analysis",
-    page_icon="🙂",
+    page_icon="🚧",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
