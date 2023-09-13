@@ -26,9 +26,11 @@ def get_links(numero:int):
 
 
 lista_original =[]
-for i in range(1,51):
-    
+for i in range(50,53):
+    if get_links(i) == []:
+        break
     lista_original = lista_original + get_links(i)
+    print(lista_original)
     tempo_dormido = random.randint(2,10)
     sleep(tempo_dormido)
     print(i)
