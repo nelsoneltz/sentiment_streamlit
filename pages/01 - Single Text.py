@@ -62,6 +62,7 @@ st.divider()
 prompt = st.chat_input("Say something",key='prompt1')
 if prompt:
     resultado1 = analise_func(prompt)
+    st.write('## Resultado')
     st.write(f"A sentença: {prompt}")
     st.write(f"Retornou o sentimento: {resultado1}")
 

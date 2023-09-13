@@ -70,6 +70,7 @@ st.divider()
 prompt2 = st.chat_input("Say something",key='prompt2')
 if prompt2:
     resultado2, frases = analise_sentimento_texto(prompt2)
-    st.write(f"O sentimento encontrado na frase foi: {resultado2}")
+    st.write('## Resultado')
+    # st.write(f"O sentimento encontrado na frase foi: {resultado2}")
     for i in range(len(frases)):
          st.write(frases[i] +' '+  resultado2[i])
