@@ -27,8 +27,8 @@ st.write('## Desbloqueie a chave para avaliações de atendimento ao cliente mai
 
 left,right = st.columns(2,gap='large')
 with left:
-    st.write("## Por enquanto estamos realizando análises on premise. Mas no futuro a ideia é obter o feedback do Avaliador em tempo real, para uma tomada de decisão mais efetiva sobre o atendimento ao cliente.")
-    st.write("## Nosso modelo de machine learning foi criado utilizando milhares de mensagens trocadas entre clientes e empresas, bem como suas avaliações sobre o atendimento.")
+    st.write("Por enquanto estamos realizando análises on premise. Mas no futuro a ideia é obter o feedback do Avaliador em tempo real, para uma tomada de decisão mais efetiva sobre o atendimento ao cliente.")
+    st.write("Nosso modelo de machine learning foi criado utilizando milhares de mensagens trocadas entre clientes e empresas, bem como suas avaliações sobre o atendimento.")
 with right:
     st.image("gif2.gif",use_column_width=True)
    
