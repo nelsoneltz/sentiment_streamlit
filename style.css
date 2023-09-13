@@ -13,6 +13,11 @@ div.h1_ {
 
 }
 
+div.image_ {
+    display: flex;
+    justify-content: center;
+}
+
 .fullScreenFrame > div {
     display: flex;
     justify-content: center;

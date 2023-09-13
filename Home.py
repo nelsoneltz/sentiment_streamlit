@@ -17,9 +17,8 @@ st.set_page_config(
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-
-st.write('# Orange Box')
 st.markdown('<div class="h1_"><h1>Orange Box</h1></div>',unsafe_allow_html=True) 
+st.markdown('<div class="image_"> <img src="gif1.gif" width="600" height="600"> </div>',unsafe_allow_html=True) 
 
 # Como centralizar essa imagem?
 # st.image("gif1.gif",width=600)
