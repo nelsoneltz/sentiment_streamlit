@@ -10,7 +10,7 @@ def get_nltk():
     nltk.download('punkt')
 
 st.set_page_config(
-    page_title="Sentimento - Home",
+    page_title="Multi Text Analysis",
     page_icon="🙂",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -58,16 +58,18 @@ def analise_sentimento_texto(texto):
 
     frases = sent_tokenize(texto, language="portuguese")  # Divide o texto em frases
     sentimentos_frases = [analise_func(frase) for frase in frases]
-    print(frases)
-    return sentimentos_frases
+    # print(frases)
+    return sentimentos_frases,frases
 
 # FRONT
-st.title('Home')
-st.header('Sentimento')
+st.title('Multi Text Analysis')
+# st.header('Sentimento')
 st.divider()
 
 # Prompt 2
 prompt2 = st.chat_input("Say something",key='prompt2')
 if prompt2:
-    resultado2 = analise_sentimento_texto(prompt2)
+    resultado2, frases = analise_sentimento_texto(prompt2)
     st.write(f"O sentimento encontrado na frase foi: {resultado2}")
+    for i in range(len(frases)):
+         st.write(frases[i] +' '+  resultado2[i])

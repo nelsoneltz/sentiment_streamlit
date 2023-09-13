@@ -10,7 +10,7 @@ def get_nltk():
     nltk.download('punkt')
 
 st.set_page_config(
-    page_title="Sentimento - Home",
+    page_title="Single Text Analysis",
     page_icon="🙂",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -54,14 +54,15 @@ def analise_func(texto:str):
     return sentimento_predito
 
 # FRONT
-st.title('Home')
-st.header('Sentimento')
+st.title('Single Text Analysis')
+# st.header('Sentimento')
 st.divider()
 
 # Prompt 1
-prompt = st.chat_input("Say something1",key='prompt1')
+prompt = st.chat_input("Say something",key='prompt1')
 if prompt:
     resultado1 = analise_func(prompt)
-    st.write(f"O sentimento encontrado na frase foi: {resultado1}")
+    st.write(f"A sentença: {prompt}")
+    st.write(f"Retornou o sentimento: {resultado1}")
 
 
