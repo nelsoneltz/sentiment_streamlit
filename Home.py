@@ -19,6 +19,7 @@ with open('style.css') as f:
 
 
 st.write('# Orange Box')
+st.markdown('<div class="h1_"><h1>Orange Box</h1></div>') 
 
 # Como centralizar essa imagem?
 # st.image("gif1.gif",width=600)
