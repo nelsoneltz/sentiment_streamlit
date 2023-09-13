@@ -18,7 +18,7 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-st.write('# Avaliador')
+st.write('# Orange Box')
 
 # Como centralizar essa imagem?
 # st.image("gif1.gif",width=600)
