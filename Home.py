@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from PIL import Image
-# import funcs
+import funcs
 
 st.set_page_config(
     page_title="Orange Box",
@@ -22,7 +22,7 @@ st.write('# Orange Box')
 
 # Como centralizar essa imagem?
 # st.image("gif1.gif",width=600)
-# funcs.imagem("gif1.gif")
+funcs.imagem("gif1.gif")
 st.write('#### Desbloqueie a chave para avaliações de atendimento ao cliente mais precisas com o Avaliador. Saber antecipadamente como seus clientes irão avaliar seu serviço é fundamental para o sucesso do seu negócio. Nosso web app permite que você preveja se as avaliações serão positivas, negativas ou neutras com base nas mensagens dos clientes. Seja proativo na melhoria de sua experiência do cliente começando agora.')
 
 left,right = st.columns(2,gap='large')
@@ -33,7 +33,7 @@ with left:
     st.divider()
     st.markdown(
     """
-    <div class="nelsin-pirigu-custom-class">
+    <div class="testing">
         <p>loren Ipum Dollor Sit Amet.</p>
     </div>
     """,
