@@ -31,7 +31,7 @@ with left:
     st.divider()
     st.write("#### Nosso modelo de machine learning foi criado utilizando milhares de mensagens trocadas entre clientes e empresas, bem como suas avaliações sobre o atendimento.")
     st.divider()
-    st.write('<div/ id="teste1">Esse é umt este de DIV. ')
+    st.write('<div id="teste1">Esse é umt este de DIV. </div>')
 with right:
     st.image("gif2.gif",use_column_width=True)
    
