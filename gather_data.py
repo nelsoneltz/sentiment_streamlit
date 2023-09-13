@@ -26,7 +26,7 @@ def get_links(numero:int):
 
 
 lista_original =[]
-for i in range(50,53):
+for i in range(1,10):
     if get_links(i) == []:
         break
     lista_original = lista_original + get_links(i)

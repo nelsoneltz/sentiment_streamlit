@@ -15,9 +15,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
+        'About': "# Este é um web app criado por Nelson Eltz e Abner Sampaio."
     }
 )
 @st.cache_resource
@@ -49,8 +47,6 @@ def analise_func(texto:str):
     sentimentos = ["Negativo", "Neutro", "Positivo"]
     sentimento_predito = sentimentos[predicted_class]
 
-    # print(f"Frase: {texto}")
-    # print(f"Sentimento Predito: {sentimento_predito}")
     return sentimento_predito
 
 def analise_sentimento_texto(texto):
@@ -70,7 +66,17 @@ st.divider()
 prompt2 = st.chat_input("Say something",key='prompt2')
 if prompt2:
     resultado2, frases = analise_sentimento_texto(prompt2)
-    st.write('## Resultado')
+
+    valores_sentimento = []
+    for sentimento in resultado2:
+        if sentimento == 'Positivo':
+            valores_sentimento.append(1)
+        if sentimento == 'Neutro':
+            valores_sentimento.append(0)
+        if sentimento == 'Negativo':
+            valores_sentimento.append(-1)      
+    media = sum(valores_sentimento) / len(valores_sentimento)
+    st.write(f'## Resultado: {media}')
     # st.write(f"O sentimento encontrado na frase foi: {resultado2}")
     for i in range(len(frases)):
          st.write(frases[i] +' '+  resultado2[i])
