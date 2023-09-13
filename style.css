@@ -1,0 +1,28 @@
+/* #home {
+    background-color: #EEEEEE;
+    border: 2px solid #CCCCCC;
+    padding: 5% 5% 5% 5%;
+    border-radius: 5px;
+    text-align: center;
+} */
+
+#avaliador {
+    font-size: 5em;
+}
+
+.fullScreenFrame > div {
+    display: flex;
+    justify-content: center;
+}
+
+span.css-10trblm.eqr7zpz0{
+    background-color: #ffda66;
+    border: 2px solid #cccccc;
+    padding: 5% 5% 5% 5%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+div.css-1629p8f.eqr7zpz1{
+    padding-top: 7%;
+}
