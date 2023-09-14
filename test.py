@@ -37,5 +37,12 @@ sorted_ = sorted(dicio.items(), key=lambda x:x[1], reverse=True)
 for key in sorted_:
     print(key[0], key[1])
 
+from collections import Counter
+words = Counter()
+words.update(lista_palavras) # Update counter with words
 
+
+print(words.most_common() )
+print('\n')
 print(sorted_)
+

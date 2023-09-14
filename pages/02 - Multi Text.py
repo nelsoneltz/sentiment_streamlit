@@ -50,7 +50,7 @@ def analise_func(texto:str):
     return sentimento_predito
 
 def analise_sentimento_texto(texto):
-    texto = texto.replace(',','.')
+    texto = texto.replace(',','.').replace('?','').replace('!','')
 
     frases = sent_tokenize(texto, language="portuguese")  # Divide o texto em frases
     sentimentos_frases = [analise_func(frase) for frase in frases]
@@ -75,7 +75,7 @@ if prompt2:
             valores_sentimento.append(0)
         if sentimento == 'Negativo':
             valores_sentimento.append(-1)      
-    media = sum(valores_sentimento) / len(valores_sentimento)
+    media = round(sum(valores_sentimento) / len(valores_sentimento),2)
     st.write(f'## Resultado: {media}')
     # st.write(f"O sentimento encontrado na frase foi: {resultado2}")
     for i in range(len(frases)):
