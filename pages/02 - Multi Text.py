@@ -50,7 +50,7 @@ def analise_func(texto:str):
     return sentimento_predito
 
 def analise_sentimento_texto(texto):
-    texto = texto.replace('?','').replace('!','')
+    texto = texto.replace('?','').replace('!','') # .replace(',','.')
 
     frases = sent_tokenize(texto, language="portuguese")  # Divide o texto em frases
     sentimentos_frases = [analise_func(frase) for frase in frases]

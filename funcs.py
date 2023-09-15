@@ -52,6 +52,8 @@ def complaint_data(link:str):
     soup = BeautifulSoup(response.text,'html.parser')
 
     complaint_title = soup.find('h1',{'data-testid':'complaint-title'})
+    complaint_creation_date_ = soup.find('span',{'data-testid':'complaint-creation-date'}).getText()
+    complaint_creation_date = complaint_creation_date_[:10] +' '+ complaint_creation_date_[14:]+':00'
 
     complaint_description = soup.find('p',{'data-testid':'complaint-description'})
 
@@ -79,6 +81,7 @@ def complaint_data(link:str):
 
     data_dict = {
         "complaint_title":complaint_title.getText(),
+        "complaint_creation_date":complaint_creation_date,
         "complaint_description":complaint_description.getText(),
         "company_response":company_response,
         "company_response_time":company_response_time,
@@ -91,7 +94,7 @@ def complaint_data(link:str):
     # print(data_dict['company_response'])
     # print(data_dict['company_response_time'])
     # print(data_dict['consumer_consideration'])
-    # print(data_dict['consumer_consideration_time'])
+    # print(data_dict['complaint_creation_date'])
     return data_dict
 
 # print(complaint_data('https://www.reclameaqui.com.br/picpay/comprei-e-nao-recebi-cashback_HNGppKaord3lDWad/'))
