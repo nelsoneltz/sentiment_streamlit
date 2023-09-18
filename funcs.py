@@ -10,10 +10,10 @@ header = {
 "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"
 }
 
-def get_links_from_company(numero:int, empresa:str):
+def get_links_from_company(pagina:int, empresa:str):
     response = requests.get(
-        f'https://www.reclameaqui.com.br/empresa/{empresa}/lista-reclamacoes/?pagina={numero}&status=EVALUATED',
-        verify=False,
+        f'https://www.reclameaqui.com.br/empresa/{empresa}/lista-reclamacoes/?pagina={pagina}&status=EVALUATED',
+        verify=True,
         headers=header
     )
     soup = BeautifulSoup(response.text,'html.parser')
@@ -27,17 +27,22 @@ def get_links_from_company(numero:int, empresa:str):
 def get_links(empresas:list,paginas:int):
     dados_completos = []
     for empresa in empresas:
-        lista_original =[]
+        cont = 1        
         for i in range(1,paginas+1):
-            dados = get_links_from_company(i,empresa)
+            dados = get_links_from_company(pagina=cont,empresa=empresa)
+            # print(dados)
+
             if dados == []:
                 break
-            lista_original = lista_original + dados
-            tempo_dormido = random.randint(2,10)
+            tempo_dormido = random.randint(2,3)
             print(f'Empresa {empresa}. Página {i}. Aguardando {tempo_dormido} segundos antes de continuar.')
             sleep(tempo_dormido)
-            # print(dados)
-        dados_completos = dados_completos + lista_original
+            for item in dados:
+                # print(item)
+                # print(type(item))
+                dados_completos.append(item)
+            cont+= 10
+    # print(dados_completos)
 
     # df = pd.DataFrame(dados_completos)
     # print(df)
